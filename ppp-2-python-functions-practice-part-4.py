@@ -36,8 +36,15 @@ print(ckn_backwards)
 # Examples: num_within(3,2,4) returns True, num_within(3,1,3) returns True, num_within(10,2,5) returns False.
 
 
-def num_within():
+def num_within(input, low_num, high_num):
+    if input >= low_num and low_num <= high_num:
+        return True
+    else:
+        return False
     
+print(num_within(5, 3, 10))
+print(num_within(2, 4, 6))
+
 
 
 
@@ -45,3 +52,14 @@ def num_within():
 # Write a Python function called pascal() that prints out the first n rows of Pascal's triangle.
 # The function accepts the number n, the number of rows to print
 # Note : Pascal's triangle is an arithmetic and geometric figure first imagined by Blaise Pascal. Each number is the two numbers above it added together.
+
+def pascal(n):
+    for i in range(n):
+        num = 1
+        for j in range(1, i+2):
+            print(num, end=" ")
+            num = num * (i - j + 1) // j
+        print()
+
+pascal(5)
+pascal(3)
